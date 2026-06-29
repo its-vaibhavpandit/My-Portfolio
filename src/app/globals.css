@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN SYSTEM — "Awwwards UI/UX Redesign"
+   ============================================ */
+
+@theme {
+  --color-bg: #09090B;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  
+  --color-accent-cyan: #00E5FF;
+  --color-accent-purple: #8B5CF6;
+  --color-accent-indigo: #6366F1;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D1D5DB;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-muted: #71717A;
+  
+  --font-hero: "Clash Display", sans-serif;
+  --font-title: "Cabinet Grotesk", sans-serif;
+  --font-body: "Satoshi", sans-serif;
+  --font-nav: "General Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ============================================
+   BASE RESET & TYPOGRAPHY
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Strictly remove every italic style */
+em, i, address, cite, dfn, var, .font-editorial, italic {
+  font-style: normal !important;
+}
+
+::selection {
+  background-color: var(--color-accent-purple);
+  color: #FFFFFF;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* ============================================
+   GRAIN OVERLAY (Textured Depth)
+   ============================================ */
+
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   RADIAL MESH BACKGROUND
+   ============================================ */
+
+.mesh-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.mesh-glow-1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: floatGlow 25s infinite alternate ease-in-out;
+}
+
+.mesh-glow-2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  animation: floatGlow 30s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  100% {
+    transform: translate(-5%, -5%) scale(0.9);
+  }
+}
+
+/* ============================================
+   GLASS CARDS (Bento & Standard)
+   ============================================ */
+
+.card-premium {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-surface-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(139, 92, 246, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Bento Cards spacing */
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ============================================
+   PREMIUM GLASS BUTTONS
+   ============================================ */
+
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-nav);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-premium:hover {
+  border-color: var(--color-text-primary);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.btn-premium:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-premium-accent {
+  background: linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-indigo) 100%);
+  border: none;
+}
+
+.btn-premium-accent:hover {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+/* ============================================
+   CURSOR GLOW EFFECT (Client Tracked)
+   ============================================ */
+
+.cursor-glow-spotlight {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.02) 0%, transparent 65%);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* ============================================
+   SHIMMER TEXT EFFCT
+   ============================================ */
+
+.shimmer-text {
+  background: linear-gradient(90deg, #FFFFFF, var(--color-accent-cyan), #FFFFFF);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+@keyframes textShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.font-heading-hero {
+  font-family: var(--font-hero);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.font-heading-section {
+  font-family: var(--font-title);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.font-navigation {
+  font-family: var(--font-nav);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.section-divider {
+  display: none; /* Removed the line divider - replaced with luxury whitespace gaps */
+}
+
+/* ============================================
+   LAYOUT CONTAINER (Side Margins/Paddings)
+   ============================================ */
+
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
