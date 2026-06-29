@@ -22,7 +22,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 const proficiencyValues: Record<string, number> = {
   learning: 45,
-  comfortable: 65,
+  intermediate: 65,
   proficient: 80,
   advanced: 95,
 };

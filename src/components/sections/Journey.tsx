@@ -37,12 +37,12 @@ const milestones = [
   {
     year: "Jul 2024 — Jan 2025",
     title: "Fast Food Delivery",
-    institution: "Web Application",
-    description: "Created a web-based ordering client flow using PHP and MySQL. Implemented dynamic shopping cart logic and order processing tables.",
-    tag: "Web Project",
+    institution: "MERN Stack Project",
+    description: "Created a web-based food ordering platform using MongoDB, Express, React, and Node.js. Implemented dynamic shopping cart logic and secure order processing.",
+    tag: "MERN Stack",
   },
   {
-    year: "Feb 2021 — Mar 2023",
+    year: "Jan — Mar 2023",
     title: "Wedding Planner",
     institution: "MERN Stack Project",
     description: "Developed a vendor management and budget coordination dashboard utilizing MongoDB, Express, React, and Node.js.",

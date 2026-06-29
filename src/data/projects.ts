@@ -83,23 +83,23 @@ export const projects: Project[] = [
   {
     slug: "fast-food-delivery",
     name: "Fast Food Delivery",
-    tagline: "Modern food ordering platform with dynamic cart features",
+    tagline: "Modern food ordering platform built with MERN stack",
     description:
-      "A complete food ordering application designed to streamline the fast food ordering experience. Built with a responsive web interface, PHP, MySQL, and robust backend checkout flow.",
+      "A complete food ordering application designed to streamline the fast food ordering experience. Built with a responsive web interface, React, Node.js, Express, and MongoDB, featuring a robust backend checkout flow.",
     problem:
       "Traditional ordering interfaces can be slow and poorly optimized for mobile devices, lacking real-time cart feedback and secure checkout.",
-    techStack: ["HTML5", "PHP", "MySQL", "Responsive Design", "JavaScript"],
-    language: "PHP",
+    techStack: ["MongoDB", "Express.js", "React", "Node.js", "TailwindCSS", "JavaScript"],
+    language: "JavaScript",
     githubUrl: "https://github.com/its-vaibhavpandit/Fast-Food-Buddy",
     createdAt: "2026-06-28",
     duration: "Jul 2024 - Jan 2025",
     features: [
       "Designed a modern food ordering platform with dynamic cart functionality",
-      "Integrated PHP and MySQL for smooth backend operations and database handling",
-      "Implemented secure login, order tracking, and checkout management system",
+      "Integrated MongoDB and Node.js/Express for smooth backend operations and database handling",
+      "Implemented secure JWT authentication, order tracking, and checkout management system",
     ],
     challenges: [
-      "Creating a smooth, client-side dynamic cart sync with PHP sessions",
+      "Creating a smooth, client-side dynamic cart sync with React context and Node.js backend",
       "Ensuring transactional integrity for payment simulation and order logging",
       "Building responsive layouts matching modern mobile application feels",
     ],
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     language: "JavaScript",
     githubUrl: "https://github.com/its-vaibhavpandit",
     createdAt: "2023-03-01",
-    duration: "Feb 2021 - Mar 2023",
+    duration: "Jan 2023 - Mar 2023",
     features: [
       "Built a full-stack wedding planner platform using MERN Stack technologies",
       "Optimized workflow management with clean UI and structured backend system",

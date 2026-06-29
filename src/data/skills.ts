@@ -4,7 +4,7 @@ export interface Skill {
   name: string;
   category: "frontend" | "backend" | "database" | "tools" | "languages";
   icon: string; // Lucide icon name
-  proficiency: "learning" | "comfortable" | "proficient" | "advanced";
+  proficiency: "learning" | "intermediate" | "proficient" | "advanced";
 }
 
 export const skills: Skill[] = [
@@ -12,9 +12,9 @@ export const skills: Skill[] = [
   { name: "TypeScript", category: "languages", icon: "FileCode2", proficiency: "proficient" },
   { name: "JavaScript", category: "languages", icon: "FileCode", proficiency: "advanced" },
   { name: "Java", category: "languages", icon: "Coffee", proficiency: "proficient" },
-  { name: "PHP", category: "languages", icon: "Code", proficiency: "comfortable" },
-  { name: "Python", category: "languages", icon: "Terminal", proficiency: "comfortable" },
-  { name: "C++", category: "languages", icon: "Cpu", proficiency: "comfortable" },
+  { name: "PHP", category: "languages", icon: "Code", proficiency: "intermediate" },
+  { name: "Python", category: "languages", icon: "Terminal", proficiency: "intermediate" },
+  { name: "C++", category: "languages", icon: "Cpu", proficiency: "intermediate" },
 
   // Frontend
   { name: "React", category: "frontend", icon: "Atom", proficiency: "advanced" },
@@ -22,25 +22,25 @@ export const skills: Skill[] = [
   { name: "TailwindCSS", category: "frontend", icon: "Palette", proficiency: "advanced" },
   { name: "HTML5", category: "frontend", icon: "FileText", proficiency: "advanced" },
   { name: "CSS3", category: "frontend", icon: "Brush", proficiency: "advanced" },
-  { name: "Framer Motion", category: "frontend", icon: "Sparkles", proficiency: "comfortable" },
+  { name: "Framer Motion", category: "frontend", icon: "Sparkles", proficiency: "intermediate" },
 
   // Backend
   { name: "Node.js", category: "backend", icon: "Server", proficiency: "proficient" },
   { name: "Express.js", category: "backend", icon: "Route", proficiency: "proficient" },
   { name: "REST APIs", category: "backend", icon: "Plug", proficiency: "proficient" },
-  { name: "Spring Boot", category: "backend", icon: "Leaf", proficiency: "comfortable" },
+  { name: "Spring Boot", category: "backend", icon: "Leaf", proficiency: "intermediate" },
 
   // Database
   { name: "MySQL", category: "database", icon: "Database", proficiency: "proficient" },
-  { name: "MongoDB", category: "database", icon: "HardDrive", proficiency: "comfortable" },
-  { name: "PostgreSQL", category: "database", icon: "Database", proficiency: "comfortable" },
+  { name: "MongoDB", category: "database", icon: "HardDrive", proficiency: "intermediate" },
+  { name: "PostgreSQL", category: "database", icon: "Database", proficiency: "intermediate" },
 
   // Tools
   { name: "Git", category: "tools", icon: "GitBranch", proficiency: "advanced" },
   { name: "GitHub", category: "tools", icon: "Github", proficiency: "advanced" },
   { name: "VS Code", category: "tools", icon: "MonitorSmartphone", proficiency: "advanced" },
   { name: "Docker", category: "tools", icon: "Container", proficiency: "learning" },
-  { name: "Linux", category: "tools", icon: "Terminal", proficiency: "comfortable" },
+  { name: "Linux", category: "tools", icon: "Terminal", proficiency: "intermediate" },
 ];
 
 export const skillCategories = [
